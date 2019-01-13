@@ -1734,3 +1734,45 @@ Processing by StudentsController#edit as HTML
   [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 5]]
   Rendered students/edit.html.erb within layouts/application (2.4ms)
 Completed 200 OK in 31ms (Views: 21.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/5/edit" for ::1 at 2019-01-13 17:32:42 +0000
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered students/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/students/5" for ::1 at 2019-01-13 17:32:43 +0000
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2UUHW7N6nETXHY/ymF4vxwBBT9CHsMHGb/vUYZ85i2ih9rBevWFRK0eG91qLujxcLPPpHYYOk7/IuwIecnRu3A==", "student"=>{"first_name"=>"fef", "last_name"=>"ee"}, "commit"=>"Update Student", "id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/students/5
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/students/5" for ::1 at 2019-01-13 17:32:43 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered students/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/6" for ::1 at 2019-01-13 17:32:46 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=6):
+  app/controllers/students_controller.rb:7:in `show'
+
+
+  Rendered /Users/timothytan/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Users/timothytan/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/timothytan/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/timothytan/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.6ms)
